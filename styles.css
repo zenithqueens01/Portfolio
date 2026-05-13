@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIABLES & RESET
-   ========================================================================== */
+/* 1. VARIABLES & RESET */
 :root {
     --primary-color: #0A192F; 
     --accent-color: #FFC107; 
@@ -29,9 +27,7 @@ h1, h2, h3, h4 {
     color: var(--primary-color);
 }
 
-/* ==========================================================================
-   2. HEADER & NAVIGATION
-   ========================================================================== */
+/* 2. HEADER & NAVIGATION*/
 .site-header {
     position: fixed;
     top: 0;
@@ -160,9 +156,7 @@ h1, h2, h3, h4 {
 .hamburger.active span:nth-child(2) { opacity: 0; left: -60px; }
 .hamburger.active span:nth-child(3) { top: 9px; transform: rotate(-135deg); }
 
-/* ==========================================================================
-   3. HERO SECTION
-   ========================================================================== */
+/* 3. HERO SECTION*/
 .hero {
     height: 100vh;
     display: flex;
@@ -177,9 +171,7 @@ h1, h2, h3, h4 {
 .hero h1 { font-size: 4.5rem; color: var(--white); margin-bottom: 1rem; }
 .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem auto; color: #E2E8F0; }
 
-/* ==========================================================================
-   4. GENERAL SECTIONS (History, Vision, Admins)
-   ========================================================================== */
+/* 4. GENERAL SECTIONS (History, Vision, Admins)*/
 .section { padding: 5rem 1rem; }
 .container { max-width: 1200px; margin: 0 auto; }
 .section-title { text-align: center; margin-bottom: 3rem; }
@@ -194,9 +186,8 @@ h1, h2, h3, h4 {
 .history-text p { color: #555; line-height: 1.7; margin-bottom: 1rem; }
 .history-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .history-gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-/* ==========================================================================
-   HISTORY: READ MORE & IMAGE FADER
-   ========================================================================== */
+
+/* HISTORY: READ MORE & IMAGE FADER*/
 .hidden-text {
     display: none;
     margin-top: 1rem;
@@ -264,9 +255,7 @@ h1, h2, h3, h4 {
 .admin-profile h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
 .admin-profile .role { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
 
-/* ==========================================================================
-   5. INFINITE SLIDESHOW
-   ========================================================================== */
+/* 5. INFINITE SLIDESHOW*/
 .infinite-slider-section { padding: 6rem 0; background: var(--white); overflow: hidden; }
 .section-header { text-align: center; margin-bottom: 2rem; padding: 0 2rem; }
 
@@ -297,9 +286,7 @@ h1, h2, h3, h4 {
     100% { transform: translateX(calc(-50% - 0.75rem)); } 
 }
 
-/* ==========================================================================
-   6. APPLE REVEAL ANIMATIONS
-   ========================================================================== */
+/* 6. APPLE REVEAL ANIMATIONS*/
 .apple-reveal {
     opacity: 0;
     transform: scale(0.95) translateY(30px);
@@ -311,9 +298,7 @@ h1, h2, h3, h4 {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 
-/* ==========================================================================
-   7. MOBILE RESPONSIVENESS (Menu Dropdown Fix)
-   ========================================================================== */
+/* 7. MOBILE RESPONSIVENESS (Menu Dropdown Fix)*/
 @media (max-width: 992px) {
     .history-content { flex-direction: column; }
     .brand { max-width: 70%; }
@@ -362,9 +347,7 @@ h1, h2, h3, h4 {
     .slider-track img { width: 280px; height: 200px; }
     .slider-container::before, .slider-container::after { width: 50px; }
 }
-/* ==========================================================================
-   ACADEMIC EXCELLENCE (Features Section)
-   ========================================================================== */
+/* ACADEMIC EXCELLENCE (Features Section)*/
 .features {
     padding: 8rem 2rem;
     background: var(--bg-light);
@@ -402,9 +385,7 @@ h1, h2, h3, h4 {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   FOOTER SECTION
-   ========================================================================== */
+/* FOOTER SECTION*/
 .site-footer {
     background-color: var(--primary-color);
     color: var(--white);
