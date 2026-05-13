@@ -88,7 +88,7 @@ h1, h2, h3, h4 {
 /* Desktop Nav Links */
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.0rem;
     list-style: none;
     align-items: center;
 }
@@ -120,8 +120,10 @@ h1, h2, h3, h4 {
 .btn-portal {
     background-color: var(--accent-color);
     color: var(--primary-color) !important;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
+    padding: 0.6rem 1.0rem;
+    border-radius: 40px;
+    white-space: nowrap; /* Forces "Contact Us" to stay on exactly one line */
+    flex-shrink: 0;
     transition: transform 0.3s var(--apple-ease), box-shadow 0.3s ease;
 }
 
@@ -192,7 +194,60 @@ h1, h2, h3, h4 {
 .history-text p { color: #555; line-height: 1.7; margin-bottom: 1rem; }
 .history-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .history-gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+/* ==========================================================================
+   HISTORY: READ MORE & IMAGE FADER
+   ========================================================================== */
+.hidden-text {
+    display: none;
+    margin-top: 1rem;
+}
+.hidden-text.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.read-more-btn:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
 
+/* Fader Setup */
+.history-gallery { display: block; } /* Overrides the previous grid */
+.image-fader {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.fade-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* The smooth 0.7s transition */
+    z-index: 1;
+}
+.fade-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 /* Vision & Mission */
 .vm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .vm-card { background: #fff; padding: 3rem 2rem; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.06); transition: transform 0.3s ease; }
