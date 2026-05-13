@@ -83,3 +83,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 
 });
+
+// --- 4. History "Read More" Toggle ---
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const hiddenText = document.getElementById('more-history');
+
+    if (readMoreBtn && hiddenText) {
+        readMoreBtn.addEventListener('click', () => {
+            hiddenText.classList.toggle('show');
+            if (hiddenText.classList.contains('show')) {
+                readMoreBtn.textContent = 'Show Less';
+            } else {
+                readMoreBtn.textContent = 'Read More...';
+            }
+        });
+    }
+
+    // --- 5. History Image Fader ---
+    const fadeImages = document.querySelectorAll('.fade-img');
+    if (fadeImages.length > 0) {
+        let currentImageIndex = 0;
+        
+        // This runs every 3 seconds (3000ms). The 0.7s transition happens within this time.
+        setInterval(() => {
+            // Remove active class from current image
+            fadeImages[currentImageIndex].classList.remove('active');
+            
+            // Move to the next image, loop back to 0 if at the end
+            currentImageIndex = (currentImageIndex + 1) % fadeImages.length;
+            
+            // Add active class to new image
+            fadeImages[currentImageIndex].classList.add('active');
+        }, 3000); 
+    }
