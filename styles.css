@@ -1,352 +1,420 @@
-  :root {
-  --primary-color: #0A192F; /* Deep Navy Blue */
-  --accent-color: #FFC107; /* Academic Gold */
-  --text-main: #333333;
-  --text-light: #8892B0;
-  --bg-light: #F8F9FA;
-  --white: #FFFFFF;
-  /* Apple-like cubic bezier for premium feel */
-  --apple-ease: cubic-bezier(0.16, 1, 0.3, 1); 
-  }
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #0A192F; 
+    --accent-color: #FFC107; 
+    --text-main: #333333;
+    --text-light: #8892B0;
+    --bg-light: #F8F9FA;
+    --white: #FFFFFF;
+    --apple-ease: cubic-bezier(0.16, 1, 0.3, 1); 
+}
 
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-main);
-  background-color: var(--bg-light);
-  overflow-x: hidden;
-  }
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
 
-  h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary-color);
-  }
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+}
 
-  /* --- Header & Unilag-Style Navigation --- */
-  header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(10, 25, 47, 0.95);
-  backdrop-filter: blur(10px); /* Modern frosted glass effect */
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: all 0.4s var(--apple-ease);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s var(--apple-ease);
+}
 
-  .nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  }
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
 
-  .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  }
+.brand {
+    flex: 0 1 auto;
+    max-width: 50%;
+}
 
-  .logo span {
-  color: var(--accent-color);
-  }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
 
-  .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  }
+.school-logo {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+}
 
-  .nav-links a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 400;
-  transition: color 0.3s ease;
-  position: relative;
-  }
+.school-name {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: var(--primary-color);
+    font-weight: 700;
+    white-space: normal;
+}
 
-  .nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--accent-color);
-  transition: width 0.3s var(--apple-ease);
-  }
+.school-name span {
+    color: var(--accent-color);
+}
 
-  .nav-links a:hover::after {
-  width: 100%;
-  }
+/* Desktop Nav Links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+}
 
-  .btn-portal {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-  padding: 0.6rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s var(--apple-ease), box-shadow 0.3s ease;
-  }
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
 
-  .btn-portal:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
-  color: var(--primary-color);
-  }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s var(--apple-ease);
+}
 
-  /* Hamburger to X Animation (Unilag style) */
-  .hamburger {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  position: relative;
-  z-index: 1001;
-  }
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-  .hamburger span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--white);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .3s ease-in-out;
-  }
+.btn-portal {
+    background-color: var(--accent-color);
+    color: var(--primary-color) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: transform 0.3s var(--apple-ease), box-shadow 0.3s ease;
+}
 
-  .hamburger span:nth-child(1) { top: 0px; }
-  .hamburger span:nth-child(2) { top: 9px; }
-  .hamburger span:nth-child(3) { top: 18px; }
+.btn-portal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+}
 
-  .hamburger.active span:nth-child(1) {
-  top: 9px;
-  transform: rotate(135deg);
-  }
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    z-index: 1001;
+}
 
-  .hamburger.active span:nth-child(2) {
-  opacity: 0;
-  left: -60px; /* slides out */
-  }
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: .3s ease-in-out;
+}
 
-  .hamburger.active span:nth-child(3) {
-  top: 9px;
-  transform: rotate(-135deg);
-  }
+.hamburger span:nth-child(1) { top: 0px; }
+.hamburger span:nth-child(2) { top: 9px; }
+.hamburger span:nth-child(3) { top: 18px; }
 
-  /* --- Hero Section --- */
-  .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2rem;
-  background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
-  color: var(--white);
-  position: relative;
-  }
+.hamburger.active span:nth-child(1) { top: 9px; transform: rotate(135deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; left: -60px; }
+.hamburger.active span:nth-child(3) { top: 9px; transform: rotate(-135deg); }
 
-  .hero h1 {
-  font-size: 4.5rem;
-  color: var(--white);
-  margin-bottom: 1rem;
-  line-height: 1.1;
-  }
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+    color: var(--white);
+}
 
-  .hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 2.5rem auto;
-  color: #E2E8F0;
-  }
+.hero h1 { font-size: 4.5rem; color: var(--white); margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem auto; color: #E2E8F0; }
 
-  /* --- Apple Signature Transitions --- */
-  /* This creates the smooth scale/blur/fade reveal similar to iOS */
-  .apple-reveal {
-  opacity: 0;
-  transform: scale(0.92) translateY(40px);
-  filter: blur(12px);
-  transition: opacity 1.2s var(--apple-ease), 
-              transform 1.2s var(--apple-ease), 
-              filter 1.2s var(--apple-ease);
-  }
+/* ==========================================================================
+   4. GENERAL SECTIONS (History, Vision, Admins)
+   ========================================================================== */
+.section { padding: 5rem 1rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 3rem; }
+.section-title h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+.section-title p { color: #666; font-size: 1.1rem; }
 
-  .apple-reveal.visible {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-  filter: blur(0);
-  }
+/* History */
+.history-section { background-color: #F8F9FA; }
+.history-content { display: flex; gap: 4rem; align-items: center; }
+.history-text { flex: 1; }
+.history-text h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+.history-text p { color: #555; line-height: 1.7; margin-bottom: 1rem; }
+.history-gallery { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.history-gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-  /* Stagger delays for children elements */
-  .delay-1 { transition-delay: 0.1s; }
-  .delay-2 { transition-delay: 0.2s; }
-  .delay-3 { transition-delay: 0.3s; }
+/* Vision & Mission */
+.vm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.vm-card { background: #fff; padding: 3rem 2rem; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.06); transition: transform 0.3s ease; }
+.vm-card:hover { transform: translateY(-5px); }
+.vm-card .icon { font-size: 3rem; margin-bottom: 1rem; }
 
-  /* --- Infinite Image Slider --- */
-  .infinite-slider-section {
-  padding: 6rem 0;
-  background: var(--white);
-  overflow: hidden;
-  }
+/* Admins */
+.admins-section { background-color: #fff; }
+.admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; }
+.admin-profile { text-align: center; }
+.profile-img { width: 200px; height: 200px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.profile-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.profile-img:hover img { transform: scale(1.08); }
+.admin-profile h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+.admin-profile .role { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
 
-  .section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 0 2rem;
-  }
+/* ==========================================================================
+   5. INFINITE SLIDESHOW
+   ========================================================================== */
+.infinite-slider-section { padding: 6rem 0; background: var(--white); overflow: hidden; }
+.section-header { text-align: center; margin-bottom: 2rem; padding: 0 2rem; }
 
-  .slider-container {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  }
+/* Gallery H3 Styling */
+.infinite-slider-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 4rem 0 1.5rem 0;
+    position: relative;
+}
+.infinite-slider-section h3::after {
+    content: ''; display: block; width: 60px; height: 4px;
+    background-color: var(--accent-color); margin: 10px auto 0 auto; border-radius: 2px;
+}
 
-  /* Fading edges for the slider */
-  .slider-container::before,
-  .slider-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 150px;
-  height: 100%;
-  z-index: 2;
-  }
+.slider-container { width: 100%; overflow: hidden; white-space: nowrap; position: relative; padding: 1rem 0; }
+.slider-container::before, .slider-container::after { content: ''; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; }
+.slider-container::before { left: 0; background: linear-gradient(to right, var(--white) 0%, rgba(255,255,255,0) 100%); }
+.slider-container::after { right: 0; background: linear-gradient(to left, var(--white) 0%, rgba(255,255,255,0) 100%); }
 
-  .slider-container::before {
-  left: 0;
-  background: linear-gradient(to right, var(--white) 0%, rgba(255,255,255,0) 100%);
-  }
+.slider-track { display: inline-flex; gap: 1.5rem; animation: scroll 40s linear infinite; }
+.slider-track:hover { animation-play-state: paused; }
+.slider-track img { width: 350px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.5s var(--apple-ease); cursor: pointer; }
+.slider-track img:hover { transform: scale(1.03); }
 
-  .slider-container::after {
-  right: 0;
-  background: linear-gradient(to left, var(--white) 0%, rgba(255,255,255,0) 100%);
-  }
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 0.75rem)); } 
+}
 
-  .slider-track {
-  display: inline-flex;
-  gap: 2rem;
-  /* Animation speed */
-  animation: scroll 35s linear infinite;
-  }
+/* ==========================================================================
+   6. APPLE REVEAL ANIMATIONS
+   ========================================================================== */
+.apple-reveal {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+    filter: blur(8px);
+    transition: opacity 1s var(--apple-ease), transform 1s var(--apple-ease), filter 1s var(--apple-ease);
+}
+.apple-reveal.visible { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
 
-  /* Pause on hover */
-  .slider-track:hover {
-  animation-play-state: paused;
-  }
+/* ==========================================================================
+   7. MOBILE RESPONSIVENESS (Menu Dropdown Fix)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .history-content { flex-direction: column; }
+    .brand { max-width: 70%; }
+    
+    /* Collapsed Nav Styling */
+    .nav-links.collapse-active {
+        display: none;
+        position: absolute;
+        top: 80px; 
+        right: 1.5rem; 
+        width: max-content; 
+        max-width: 250px; 
+        background: #ffffff;
+        padding: 0.5rem 0;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
 
-  .slider-track img {
-  width: 400px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.5s var(--apple-ease);
-  cursor: pointer;
-  }
+    .nav-links.collapse-active.show-menu {
+        display: flex;
+        animation: dropDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
 
-  .slider-track img:hover {
-  transform: scale(1.05);
-  }
+    .nav-links.collapse-active a {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
 
-  @keyframes scroll {
-  0% { transform: translateX(0); }
-  /* Translate by exactly half since we duplicate the images for seamless loop */
-  100% { transform: translateX(calc(-50% - 1rem)); } 
-  }
+    .nav-links.collapse-active a::after { display: none; } /* Removes underline on mobile */
+    .nav-links.collapse-active li:last-child a { border-bottom: none; }
+}
 
-  /* --- Features Section --- */
-  .features {
-  padding: 8rem 2rem;
-  background: var(--bg-light);
-  max-width: 1400px;
-  margin: 0 auto;
-  }
+@keyframes dropDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-  .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-top: 4rem;
-  }
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .slider-track img { width: 280px; height: 200px; }
+    .slider-container::before, .slider-container::after { width: 50px; }
+}
+/* ==========================================================================
+   ACADEMIC EXCELLENCE (Features Section)
+   ========================================================================== */
+.features {
+    padding: 8rem 2rem;
+    background: var(--bg-light);
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-  .card {
-  background: var(--white);
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-  transition: transform 0.4s var(--apple-ease), box-shadow 0.4s var(--apple-ease);
-  }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
 
-  .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  }
+.card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    transition: transform 0.4s var(--apple-ease), box-shadow 0.4s var(--apple-ease);
+}
 
-  .card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
 
-  .card p {
-  color: var(--text-light);
-  line-height: 1.6;
-  }
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
 
-  /* --- Responsive Design --- */
-  @media (max-width: 992px) {
-  .hero h1 { font-size: 3.5rem; }
-  .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--primary-color);
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: right 0.5s var(--apple-ease);
-  }
-  .nav-links.active {
-      right: 0;
-  }
-  .nav-links li {
-      margin: 1.5rem 0;
-  }
-  .nav-links a {
-      font-size: 1.5rem;
-  }
-  .hamburger {
-      display: block;
-  }
-  .btn-portal {
-      display: none; /* Hide in mobile nav for simplicity, or move inside menu */
-  }
-  }
+.card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
 
-  @media (max-width: 768px) {
-  .hero h1 { font-size: 2.5rem; }
-  .slider-track img { width: 280px; height: 200px; }
-  .slider-container::before, .slider-container::after { width: 50px; }
-  }
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 2rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-brand h2 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.footer-contact a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
