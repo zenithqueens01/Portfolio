@@ -249,7 +249,7 @@ h1, h2, h3, h4 {
 .admins-section { background-color: #fff; }
 .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; }
 .admin-profile { text-align: center; }
-.profile-img { width: 200px; height: 200px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.profile-img { width: 200px; height: 200px; margin: 0 auto 1.5rem auto; border-radius: 30%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 .profile-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .profile-img:hover img { transform: scale(1.08); }
 .admin-profile h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
