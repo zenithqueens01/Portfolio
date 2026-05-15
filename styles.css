@@ -246,15 +246,50 @@ h1, h2, h3, h4 {
 .vm-card .icon { font-size: 3rem; margin-bottom: 1rem; }
 
 /* Admins */
-.admins-section { background-color: #fff; }
-.admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; }
-.admin-profile { text-align: center; }
-.profile-img { width: 200px; height: 200px; margin: 0 auto 1.5rem auto; border-radius: 30%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.profile-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.profile-img:hover img { transform: scale(1.08); }
-.admin-profile h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
-.admin-profile .role { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
+.admin-grid {
+    display: flex;
+    flex-wrap: wrap;             /* Forces items to the next row if they run out of space */
+    justify-content: center;     /* Centers the items perfectly on the new row */
+    gap: 4rem;                   /* Keeps a clean, even distance between all profiles */
+    margin-top: 3rem;
+}
 
+.admin-profile {
+    text-align: center;
+    flex: 0 1 1.5 260px;             
+}
+
+.profile-img {
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 40%;         /* Changed from 50% to 60px to match your screenshot's shape */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.profile-img img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--apple-ease);
+}
+
+.profile-img:hover img { 
+    transform: scale(1.08); 
+}
+
+.admin-profile h4 { 
+    font-size: 1.2rem; 
+    color: var(--primary-color); 
+    margin-bottom: 0.3rem; 
+}
+
+.admin-profile .role { 
+    color: var(--accent-color); 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+}
 /* 5. INFINITE SLIDESHOW*/
 .infinite-slider-section { padding: 6rem 0; background: var(--white); overflow: hidden; }
 .section-header { text-align: center; margin-bottom: 2rem; padding: 0 2rem; }
