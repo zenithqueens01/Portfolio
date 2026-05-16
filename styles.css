@@ -1,6 +1,6 @@
 /* 1. VARIABLES & RESET */
 :root {
-    --primary-color: #0A192F; 
+    --primary-color: #052859; 
     --accent-color: #FFC107; 
     --text-main: #333333;
     --text-light: #8892B0;
@@ -78,9 +78,19 @@ h1, h2, h3, h4 {
 }
 
 .school-name span {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
-
+/*Services our school delivers design*/
+.service{
+    color: rgb(43, 60, 239);
+    font: inherit;
+    display: block;
+    margin: 5px 0px;
+    font-size: 14px;;
+}
+.service span {
+    color: palevioletred;
+}
 /* Desktop Nav Links */
 .nav-links {
     display: flex;
@@ -164,7 +174,7 @@ h1, h2, h3, h4 {
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
-    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('pix/010.jpeg') center/cover;
     color: var(--white);
 }
 
@@ -256,7 +266,7 @@ h1, h2, h3, h4 {
 
 .admin-profile {
     text-align: center;
-    flex: 0 1 1.5 260px;             
+    flex: 0 1 270px;             
 }
 
 .profile-img {
