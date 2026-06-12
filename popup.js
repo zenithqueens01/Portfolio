@@ -20,9 +20,6 @@
          "Get your PVC now. Your vote counts! 🗳️ " +
          "God bless Nigeria. 🇳🇬",
  
-    // CTA button text + link
-    ctaText: "Visit Our Website",
-    ctaLink: "https://www.kingsandqueeniesschools.com",
  
     // How many seconds after page load before the popup appears
     delaySeconds: 1.5,
@@ -64,9 +61,6 @@
         <span class="kq-badge">${CONFIG.badge}</span>
         <h2>${CONFIG.heading}</h2>
         <p>${CONFIG.message}</p>
-        <a class="kq-cta" href="${CONFIG.ctaLink}" target="_blank" rel="noopener">
-          ${CONFIG.ctaText}
-        </a>
         <button class="kq-dismiss">Dismiss</button>
       </div>
     </div>
